@@ -1,295 +1,42 @@
+---
+layout: page
+description: "Thinking will not overcome fear but action will."
+---
 
-<!DOCTYPE HTML>
-<!--
-	Telephasic by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Lin Zhang's Website</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="homepage is-preload">
-		<div id="page-wrapper">
+{% for post in paginator.posts %}
+<div class="post-preview">
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h2 class="post-title">
+            {{ post.title }}
+        </h2>
+        {% if post.subtitle %}
+        <h3 class="post-subtitle">
+            {{ post.subtitle }}
+        </h3>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:200 }}
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
+    </p>
+</div>
+<hr>
+{% endfor %}
 
-			<!-- Header -->
-				<div id="header-wrapper">
-					<div id="header" class="container">
-
-						<!-- Logo -->
-							<h1 id="logo"><a href="index.html">Main Page</a></h1>
-
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li>
-										<a href="story1.html">Story one</a>
-										<!-- <ul> -->
-											<!-- <li><a href="#">Lorem ipsum dolor</a></li>
-											<li><a href="#">Magna phasellus</a></li>
-											<li><a href="#">Etiam dolore nisl</a></li>
-											<li>
-												<a href="#">Phasellus consequat</a>
-												<ul>
-													<li><a href="#">Lorem ipsum dolor</a></li>
-													<li><a href="#">Phasellus consequat</a></li>
-													<li><a href="#">Magna phasellus</a></li>
-													<li><a href="#">Etiam dolore nisl</a></li>
-												</ul>
-											</li>
-											<li><a href="#">Veroeros feugiat</a></li> -->
-										<!-- </ul> -->
-									</li>
-									<li><a href="story2.html">Story two</a></li>
-									<li class="break"><a href="Watching.html">Watching</a></li>
-									<li><a href="Listening.html">Listening</a></li>
-								</ul>
-							</nav>
-
-					</div>
-
-					<!-- Hero -->
-						<section id="hero" class="container">
-							<header>
-								<h2>Lin Zhang</h2>
-								<!-- <p>
-								<br />
-							</p> -->
-								 <!-- <a href="http://html5up.net">HTML5 UP</a></h2> -->
-							</header>
-							<p>This is a place to relax. <br/>
-								You can read stories, watch videos, and listen to podcasts.
-							<br />
-							:) Enjoy !</a>
-						</p>
-
-							<ul class="actions">
-								<!-- <h3><a href="#" >Get this story started</a></h3> -->
-							</ul>
-						</section>
-				</div>
-
-
-
-				<!-- <section id="intro" class="wrapper style1">
-
-
-					<div class="container">
-						<p class="style1"><strong>Hi, I'm Lin Zhang</strong></p>
-						<p class="style2">
-							 viginia tech student major in Computer Science. <br class="mobile-hide" />
-							Key skill:  Java, C, kotlin, R, Python, JavaScript, Scala.
-							<! <a href="http://html5up.net" class="nobr">HTML5 UP -->
-						<!-- </p>
-						<p class="style3">It's <strong>responsive</strong>, built on <strong>HTML5</strong> and <strong>CSS3</strong>, and released for
-						free under the <a href="http://html5up.net/license">Cre\atie Commons Attribution 3.0 license</a>, so use it for any of
-						your personal or commecial projects &ndash; just be sure o credit us!</p>
-						<ul class="actions">
-							<li><a href="#" class="button style3 large">Poceed</a></li>
-						</ul>
-					</div>
-				</section> -->
-
-
-
-				<section id="intro2" class="wrapper style1">
-
-					<div class="container">
-						<p class="style1"><h2>Hi, I'm Lin Zhang</h2></p>
-						<p class="style2">
-							<strong> Virginia tech student major in Computer Science.</strong> <br class="mobile-hide" />
-							<strong>Key skills:  Java, C, kotlin, R, Python, JavaScript, Scala.</strong><br class="mobile-hide" />
-							<!-- <a href="http://html5up.net" class="nobr">HTML5 UP -->
-						</p>
-						<p class="style3">
-						<strong>Research:  OpenDSA, Content and Infrastructure for interactive eTextbooks.</strong><br class="mobile-hide" />
-						<strong>Research:  Uncovering novel viruses in human microbiome data and soil data.</strong><br class="mobile-hide" />
-						<strong>UTA:  CS 2506 Computer Organization II</strong><br class="mobile-hide" />
-					 </p>
-					 <!-- <p class="style3">
-						 <strong>Some Coding Note：</strong><br class="mobile-hide" />
-						 <a href="Recusion.html">Recusion</a>
-					</p> -->
-						<!-- <ul class="actions">
-
-							<!-- <li><a href="#" class="button style3 large">Poceed</a></li> -->
-						<!-- </ul> -->
-					</div>
-				</section>
-
-			<!-- Features 1 -->
-				<div class="wrapper">
-					<div class="container">
-						<div class="row">
-							<section class="col-6 col-12-narrower feature">
-								<div class="image-wrapper first">
-									<a href="https://medium.com/@lz2304/is-artificial-intelligence-reasonable-9064835f2611" class="image featured first"><img src="images/pic01.jpg" alt="" /></a>
-								</div>
-								<header>
-									<h2>Is Artificial Intelligence<br />
-									 reasonable?</h2>
-								</header>
-								<p>The twenty-first centur is the age of outbreak in science and technology.
-									 A few decades ago, we oud not imagine a palm-sized device could help us connect with our
-									 friends, who may live hundreds of miles away, in a few seconds. This device totally
-									 reshaped people’s daily live...</p>
-								<ul class="actions">
-									<!-- <li><a href="#" class="button">Full story</a></li> -->
-										<li><a id="mainBnt" href="https://medium.com/@lz2304/is-artificial-intelligence-reasonable-9064835f2611" target="_blank" class="button large">Full Story</a></li>
-								</ul>
-							</section>
-							<section class="col-6 col-12-narrower feature">
-								<div class="image-wrapper">
-									<a href="https://medium.com/@lz2304/one-secret-of-lifespan-392b12d8acdd" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								</div>
-								<header>
-									<h2>The secret of<br/>
-									Longevity</h2>
-								</header>
-								<p>An argument may arise when two or more individuals exchange
-									 opposing views, and arguments can hurt the people we care about.
-									 Normally, we take the m
-									 atter to heart and may resent or even hold
-									  grudges. Hurt people also develop some chronic emotions......
-									</p>
-								<ul class="actions">
-									<li><a id="mainBnt" href="https://medium.com/@lz2304/one-secret-of-lifespan-392b12d8acdd" target="_blank" class="button large">Full Story</a></li>
-								</ul>
-							</section>
-						</div>
-					</div>
-				</div>
-
-			<!-- Promo -->
-				<div id="promo-wrapper">
-					<section id="promo">
-						<h2>Everyone thinks of changing the world, but no one thinks of changing himself.</h2>
-						<a  href="https://medium.com/@JBrown/changing-the-world-by-changing-yourself-cd2b637dc6ca" class="button">Story</a>
-					</section>
-				</div>
-
-			<!-- Features 2 -->
-				<div class="wrapper">
-					<section class="container">
-						<header class="major">
-							<h2>Watching  &  Listening</h2>
-							<p>"We do not see things as they are, we see them as we are." --- Anais Nin </p>
-						</header>
-						<div class="row features">
-							<section class="col-4 col-12-narrower feature">
-								<div>
-									<iframe height="300" width="320"
-									src="https://www.youtube.com/embed/-hrt5pEf0Tw">
-									</iframe>
-								</div>
-								<p>The intangible effects of walls</p>
-							</section>
-							<section >
-								<div class="image-wrapper">
-									<iframe height="300" width="320"
-									src="https://www.youtube.com/embed/lUKhMUZnLuw">
-									</iframe>
-								</div>
-								<p>Helping others makes us happier</p>
-							</section>
-							<section class="col-4 col-12-narrower feature">
-								<div >
-									<iframe height="300" width="320"
-									src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/334068720&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-									</iframe>
-
-								</div>
-								<p>Henrique e Juliano + Matheus E Kauan</p>
-							</section>
-						</div>
-						<ul class="actions major">
-							<!-- <li><a href="https://www.youtube.com/" class="button">Youtube.com</a></li> -->
-						</ul>
-					</section>
-				</div>
-
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<div id="footer" class="container">
-						<header class="major">
-							<h2>Website link</h2>
-							<p>"Twitter is a simple service used by smart people. Facebook is a smart service used by simple people." --- Jonah Peretti.</p>
-						</header>
-						<div class="row">
-							<section class="col-6 col-12-narrower">
-								<a href="#" class="image featured first"><img src="images/001.jpg" alt="" /></a>
-
-								<!-- <form method="post" action="#">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobile">
-											<input name="name" placeholder="Name" type="text" />
-										</div>
-										<div class="col-6 col-12-mobile">
-											<input name="email" placeholder="Email" type="text" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" placeholder="Message"></textarea>
-										</div>
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" /></li>
-												<li><input type="reset" value="Clear form" /></li>
-											</ul>
-										</div>
-									</div>
-								</form> -->
-							</section>
-							<section class="col-6 col-12-narrower">
-								<div class="row gtr-0">
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/people/Lin-Zhang/100014322406387"><span class="extra"></span>Facebook</a></li>
-										<li class="icon brands fa-dribbble"><a href="https://github.com/LIN251/"><span class="extra"></span>Github</a></li>
-									</ul>
-									<ul class="divided icons col-6 col-12-mobile">
-										<!-- <li class="icon brands fa-instagram"><a href="https://www.instagram.com/"><span class="extra"></span>Instagram</a></li> -->
-										<li class="icon brands fa-youtube"><a href="https://www.youtube.com/channel/UCo6qXHYGSRaj6euzSnRyb9Q/featured"><span class="extra"></span>Youtube</a></li>
-										<!-- <li class="icon brands fa-pinterest"><a href="https://www.pinterest.com/"><span class="extra"></span>pinterest</a></li> -->
-										<li class="icon brands fa-twitter"><a href="https://twitter.com/LINZHAN83506839?s=09"><span class="extra"></span>Twitter</a></li>
-
-									</ul>
-								</div>
-
-								<!-- <div class="row gtr-0">
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-twitter"><a href="https://www.twitter.com/"><span class="extra"></span>Twitter</a></li>
-										<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/"><span class="extra"></span>Facebook</a></li>
-									</ul>
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-dribbble"><a href="https://github.com/LIN251/"><span class="extra"></span>Github</a></li>
-										<li class="icon brands fa-instagram"><a href="https://www.instagram.com/"><span class="extra"></span>Instagram</a></li>
-									</ul>
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-youtube"><a href="https://www.youtube.com/"><span class="extra"></span>Youtube</a></li>
-										<li class="icon brands fa-pinterest"><a href="https://www.pinterest.com/"><span class="extra"></span>pinterest</a></li>
-									</ul>
-								</div> -->
-							<!-- </section> -->
-						<!-- </div> -->
-					</div>
-					<div id="copyright" class="container">
-						<ul class="menu">
-							<li>&copy; Lin Zhang. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-				</div>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+<ul class="pager">
+    {% if paginator.previous_page %}
+    <li class="previous">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
+    </li>
+    {% endif %}
+    {% if paginator.next_page %}
+    <li class="next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
