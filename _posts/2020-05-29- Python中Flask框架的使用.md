@@ -46,18 +46,17 @@ session.pop('username', None) //从session中移除username，如果存在的话
 
 **flash** 一旦设置，可在任意一次请求中获取，但是只能取一次
 ```
-
+待定
 ```
 **g** 在A路由中设置设置，只能在A路由请求中请求中获取，其它的请求都不能获取
 ```
-
+待定
 ```
 
 ### API接入
-Ensembl API例子
+Ensembl API的接入. 如何构建URL.
 
 ``` Python
-// Ensembl API的接入. 如何构建URL.
 @app.route('/Ensembl', methods=['GET', 'POST'])
 def index():
     server = "http://rest.ensembl.org"
