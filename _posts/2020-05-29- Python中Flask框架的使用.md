@@ -2,7 +2,7 @@
 layout:     post
 title:      Python中Flask框架的使用(随笔)
 subtitle:   
-date:       2020-05-01
+date:       2020-05-29
 author:     Linz
 header-img: img/about_bg.jpeg
 catalog: true
@@ -39,8 +39,16 @@ tags:
 ### Flask在不同页面间传递参数
 
 **session** 只要设置，在任意请求中都能拿到，无论你拿多少次
+
+    在flask当中使用 session 时，必须要做一个配置,即 flask的session中需要用到的秘钥字符串，可以是任意值
+    flask默认把数据存放到了cookie中
+
+
 ```
+app.config["SECRET_KEY"] = "renyizifuchuan"
 session.pop('username', None) //从session中移除username，如果存在的话
+session["name"] = "python" //加入
+name = session.get("name") //取出
 
 ```
 
@@ -73,7 +81,7 @@ def index():
     return json.dumps(decoded ,ensure_ascii=False)
 ```
 
-### 重定向
+### 重定向到前端
 
 多个URL对应一个function, 转到新的html (render_template)
 
@@ -82,6 +90,12 @@ def index():
 @app.route('/hello/<name>')
 def hello(name=None):
     return render_template('hello.html', name=name)
+```
+
+### 前端回到后端
+
+``` Python
+<button onclick="window.location.href='{{ url_for("后端function名字") }}'">Button名字</button>
 ```
 
 ### 读取URL中值作为输入
