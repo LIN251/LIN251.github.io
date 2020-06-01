@@ -4,7 +4,7 @@ title:      Python中Flask框架的使用(随笔)
 subtitle:   
 date:       2020-05-31
 author:     Linz
-header-img: img/Background/b1.jpg
+header-img: img/Background/b2.jpg
 catalog: true
 tags:
     - 服务器
