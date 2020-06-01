@@ -2,9 +2,9 @@
 layout:     post
 title:      Python中Flask框架的使用(随笔)
 subtitle:   
-date:       2020-05-29
+date:       2020-05-31
 author:     Linz
-header-img: img/about_bg.jpeg
+header-img: img/Background/b1.jpg
 catalog: true
 tags:
     - 服务器
