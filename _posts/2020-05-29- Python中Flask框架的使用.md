@@ -38,7 +38,7 @@ tags:
 
 ### Flask参数传递
 
-**session** 只要设置，在任意请求中都能拿到，无论你拿多少次
+**session：** 只要设置，在任意请求中都能拿到，无论你拿多少次
 
     在flask当中使用 session 时，必须要做一个配置,即 flask的session中需要用到的秘钥字符串，可以是任意值
     flask默认把数据存放到了cookie中
@@ -52,14 +52,56 @@ name = session.get("name") //取出
 
 ```
 
-**flash** 一旦设置，可在任意一次请求中获取，但是只能取一次
+**flash：** 一旦设置，可在任意一次请求中获取，但是只能取一次
 ```
 待定
 ```
-**g** 在A路由中设置设置，只能在A路由请求中请求中获取，其它的请求都不能获取
+**g：** 在A路由中设置设置，只能在A路由请求中请求中获取，其它的请求都不能获取
 ```
 待定
 ```
+
+### HTML前端传数据到后端（重点）
+``` HTML
+前端
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Flask示例</title>
+</head>
+   <body>
+
+      <form action = "http://localhost:5000/result" method = "POST">
+         <p>姓名 <input type = "text" name = "Name" /></p>
+         <p><input type = "submit" value = "提交" /></p>
+      </form>
+
+   </body>
+</html>
+```
+``` python
+后端
+@app.route('/result',methods = ['POST', 'GET'])
+def result():
+    if request.method == 'POST':
+        result = request.form /取得整个提交的表格
+        result2 = request.form.get("Name", type=str,default=None)
+        print(result2+ "test")
+        return render_template("result.html",result = result)
+```
+
+### HTML后端传数据到前端（重点）
+``` HTML
+前端
+      <th> {{ result }} </th>
+```
+``` python
+后端
+@app.route('/result',methods = ['POST', 'GET'])
+def result():
+        return render_template("result.html",result = result)
+```
+
 
 ### API接入
 Ensembl API的接入. 如何构建URL.
@@ -92,7 +134,7 @@ def hello(name=None):
     return render_template('hello.html', name=name)
 ```
 
-### 前端回到后端
+### 前端转后端function
 
 ``` Python
 <button onclick="window.location.href='{{ url_for("后端function名字") }}'">Button名字</button>
