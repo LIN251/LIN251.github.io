@@ -30,4 +30,4 @@ On the other hand, these obvious advantages also cause some uncontrollable fear.
 
 Humans can’t deny the A.I advantages even if some risks exist. A.I. is a powerful tool for improving people’s lives in all areas. Efficient, intelligent, logical, and independent: our society needs these abilities. We can imagine what will happen when large numbers of A.I. machines exist in our lives. Humans will be liberated, and A.I. will do the work. All lives will become simpler and easier. People can do whatever they enjoy. Meanwhile, A.I. machines can also greatly reduce hunger and unfair events. Our lives will become more comfortable, creating a world people will look forward to.
 
-![](https://data-flair.training/blogs/wp-content/uploads/sites/2/2019/11/Future-of-Artificial-Intelligence-2.jpg)
+
