@@ -204,6 +204,23 @@ $ docker container run --rm -p 8000:3000 -it koa-demo /bin/bash
 ```
 上面的command会启动容器之后运行bash界面。之后在bash界面可以手动输入命令。比如说 node demos/01.js
 
+a. 链接两个容器
+```text
+$ docker container run \
+  --rm \
+  --name wordpress \
+  --volume "$PWD/":/var/www/html \
+  --link wordpressdb:mysql \
+  phpwithmysql
+```
+跟上一次相比，上面的命令多了一个参数--link wordpressdb:mysql，表示 WordPress 容器要连到wordpressdb容器，冒号表示该容器的别名是mysql。
+
+b. 修改容器权限
+
+```text
+$ chmod -R 777 wordpress
+```
+
 ### 终止和删除容器
 
 在容器的命令行，按下 Ctrl + c 停止进程，然后按下 Ctrl + d （或者输入 exit）退出容器。此外，也可以用docker container kill终止容器运行
@@ -299,6 +316,7 @@ $ bash container stop [containerID]
 
 （3）docker container logs
 docker container logs命令用来查看 docker 容器的输出，即容器里面 Shell 的标准输出。如果docker run命令运行容器的时候，没有使用-it参数，就要用这个命令查看输出。
+或者如果容器是在后台运行的，前台看不见它的输出，必须使用下面的命令查看。
 
 ``` text
 $ docker container logs [containerID]
@@ -321,5 +339,6 @@ docker container cp命令用于从正在运行的 Docker 容器里面，将文�
 $ docker container cp [containID]:[/path/to/file] .
 ```
 
-官方文档：https://docs.docker.com/engine/install/centos/
-参考文档：https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
+参考链接：
+https://docs.docker.com/engine/install/centos/ By 官方文档
+https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html By 阮一峰
