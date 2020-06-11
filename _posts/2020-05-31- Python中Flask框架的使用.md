@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Python中Flask框架的使用(随笔)
+title:      Python中Flask框架的使用(待续)
 subtitle:   
 date:       2020-05-31
 author:     Linz
