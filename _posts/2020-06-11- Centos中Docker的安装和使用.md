@@ -141,7 +141,7 @@ Docker 的优势就是方便迁移，所以如何用已经有的仓库生成 ima
 
 这就需要用到 Dockerfile 文件。它是一个文本文件，用来配置 image。Docker 根据 该文件生成二进制的 image 文件。
 
-### Dockerfile 制作，生成image
+### Dockerfile 制作，生成image， 删除image
 
 1. 忽略directory
 在项目的根目录下，新建一个文本文件.dockerignore，
@@ -186,6 +186,14 @@ $ docker image ls
 // 如果运行成功，就可以看到新生成的 image 文件了。
 ```
 
+4. 删除image
+
+普通删除和强制执行
+``` text
+$ docker image rm imageName
+
+$ docker image rm --force imageName
+```
 
 ### image迁移生成容器并运行
 
@@ -267,6 +275,54 @@ CMD node demos/01.js
 //启动并运行
 $ docker container run --rm -p 8000:3000 -it koa-demo:0.0.1
 ```
+
+### 使用docker-compose build image像并启动应用
+
+docker-compose：定义和运行多个 Docker 容器的应用
+
+add docker-compose to path
+``` text
+1. sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+
+2. sudo chmod +x /usr/local/bin/docker-compose
+
+3. sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+4. docker-compose --version
+```
+
+docker-compose 使用
+
+``` text
+docker-compose up -d 
+# 后台运行
+docker-compose stop
+# 停止正在运行的服务
+docker-compose down
+# 关闭所有容器并删除，默认保留 数据卷
+docker-compose p
+# 列出当前运行的服务状态和相关信息
+docker-compose run web env
+# 一次性命令，例如查看 web 服务的环境变量
+
+
+docker-compose命令运行报错
+``` text
+Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.
+
+解决方法：
+service docker restart
+```
+
+docker-compose 使用
+
+``` text
+
+```
+
+
+
 
 ### 发布image
 容器运行成功后，就确认了 image 文件的有效性。这时，我们就可以考虑把 image 文件分享到网上，让其他人使用。
