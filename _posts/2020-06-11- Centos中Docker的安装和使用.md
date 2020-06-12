@@ -395,6 +395,32 @@ docker container cp命令用于从正在运行的 Docker 容器里面，将文�
 $ docker container cp [containID]:[/path/to/file] .
 ```
 
+### 常用操作
+
+列出所有的容器 ID
+
+```
+docker ps -aq
+```
+
+停止所有的容器
+
+```text
+docker stop $(docker ps -aq)
+```
+
+删除所有的容器
+
+```text
+docker rm $(docker ps -aq)
+```
+
+删除所有的镜像
+
+```text
+docker rmi $(docker images -q)
+```
+
 
 官方文档：https://docs.docker.com/engine/install/centos/
 参考链接：https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html
