@@ -7,7 +7,7 @@ author:     Linz
 header-img: img/Background/b2.jpg
 catalog: true
 tags:
-    - 服务器
+    - Flask
 ---
 
 ## Python中Flask框架的使用
