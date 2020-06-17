@@ -31,7 +31,7 @@ File --> preferences -->setting
 
 ### 配置
 
-``` json
+``` javascript
 {
 
   // tab 大小为2个空格

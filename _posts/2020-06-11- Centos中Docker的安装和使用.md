@@ -397,6 +397,14 @@ $ docker container cp [containID]:[/path/to/file] .
 
 ### 常用操作
 
+开启docker服务
+
+```
+sudo service docker status
+sudo service docker start
+
+```
+
 列出所有的容器 ID
 
 ```
