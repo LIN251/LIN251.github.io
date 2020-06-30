@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Python中Flask框架的使用(待续)
+title:      Python Flask 1
 subtitle:   
 date:       2020-05-31
 author:     Linz

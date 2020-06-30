@@ -405,6 +405,14 @@ sudo service docker start
 
 ```
 
+
+重启服务
+
+```
+systemctl daemon-reload && systemctl restart docker
+
+```
+
 列出所有的容器 ID
 
 ```
