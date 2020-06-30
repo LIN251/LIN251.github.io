@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Load or edit local json file using pure javascript
+title:      Load or edit json file using pure javascript
 subtitle:   
 date:       2020-06-29
 author:     Linz
@@ -16,7 +16,7 @@ Some concepts
 ## 1. Load
 
 #### Wrong way
-```javascript
+```Javascript
 
    data = '[{"test1" : "50", "test2" : "90"}]';
 
@@ -77,4 +77,3 @@ xmlhttp.send();
 ```
 
 ## 2. Add
- 
