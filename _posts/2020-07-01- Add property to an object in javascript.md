@@ -42,7 +42,7 @@ create a variable ***var obj = {};*** with "{ }", and then add correct str to th
 
 #### Add a property to a existing property (Complex situation)
 
-![](../img/posting/example1.png "example")
+![](https://miro.medium.com/max/552/1*aCCN53g4HRsGa9nZ4ONWaQ.png "example")
 
 This is the real problem I am running into. My goal is adding a test cast to ***obj[0].testCases***
 
@@ -55,4 +55,4 @@ function addtoTestCase(str, obj) {
   inobj[1] = current
 }
 ```
-![](../img/posting/example2.png "example2")
+![](https://miro.medium.com/max/552/1*nldxdC9Mn7Zgm-TfqxTLJg.png "example2")
