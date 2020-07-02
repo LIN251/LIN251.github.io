@@ -7,7 +7,7 @@ author:     Linz
 header-img: img/Background/b2.jpg
 catalog: true
 tags:
-    - javascript
+    - JavaScript
 ---
 
 ## 1. Regular expression in javascript
