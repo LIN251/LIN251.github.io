@@ -11,7 +11,7 @@ tags:
 ---
 
 #### My question
-I want to add a property { "aabb" : true }to an object. 
+Goal: add property { "aabb" : true } to an exist object. 
 
 ```javascript 
 var str = "aabb"
@@ -23,9 +23,9 @@ function test(){
 test()
 console.log(obj.str) // true 
 ```
-This means obj has {str:true} rather than {"aabb":true}.
+This means obj has property {str:true} rather than {"aabb":true).
 
-All properties between "{ }" will be what they are. So ***variable name***  "str" will be add to obj, rather than ***variable itself***
+ Properties between "{ }" will be added as ***variable name***  "str", rather than ***variable itself***.
 
 
 #### Simple solution (Trade off)
@@ -37,16 +37,16 @@ function test(){
 }
 test()
 ```
-create a variable ***var obj = {};*** with "{ }", and then add correct str to the obj by using ***"[ ]"***. In javascript, all variables betweem [] will be replace by it's value, so it works. 
+create a variable ***var obj = {};***, and then add correct str value to obj by using ***"[ ]"***. In javascript, all variables betweem [] will be replace by it's value, so this works. 
 
 
-#### Add a property to a existing property (Complex situation)
+#### Add a property to existing properties (Complex situation)
 
 ![](https://miro.medium.com/max/552/1*aCCN53g4HRsGa9nZ4ONWaQ.png "example")
 
 This is the real problem I am running into. My goal is adding a test cast to ***obj[0].testCases***
 
-My solution is create a ***"var current = {}"*** first (Reason: see Simple solution above). Then go inside the object and resign the value.
+The solution is create a ***"var current = {}"*** first (Reason: see Simple solution above). Then go inside the object and resign the value.
 ```javascript
 function addtoTestCase(str, obj) {
   var current = {}
