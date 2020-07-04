@@ -2,7 +2,7 @@
 layout:     post
 title:      Basic Java
 subtitle:   
-date:       2020-07-04
+date:       2020-07-05
 author:     Linz
 header-img: img/Background/b2.jpg
 catalog: true
