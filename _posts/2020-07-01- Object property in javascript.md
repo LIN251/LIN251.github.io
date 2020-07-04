@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Add property to an object in javascript
+title:      Object property in javascript
 subtitle:   
 date:       2020-07-01
 author:     Linz
@@ -56,3 +56,26 @@ function addtoTestCase(str, obj) {
 }
 ```
 ![](https://miro.medium.com/max/552/1*nldxdC9Mn7Zgm-TfqxTLJg.png "example2")
+
+#### Other concepts:
+
+#### Get object property names in javascript
+```javascript
+const object1 = {
+  a: 1,
+  b: 2,
+  c: 3
+};
+
+console.log(Object.getOwnPropertyNames(object1));
+// expected output: Array ["a", "b", "c"]
+```
+
+#### Error:  “ Uncaught TypeError: Cannot convert undefined or null to object ”
+```javascript
+if (typeof Object.keys(objValue) !== 'undefined'
+  && Object.keys(objValue).length > 0) {
+    
+}
+ // one more step to check key and length to avoid undefined error
+```
