@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      HTML(待续)
+title:      HTML and JavaScript
 subtitle:   
-date:       2020-06-07
+date:       2020-07-12
 author:     Linz
 header-img: img/Background/b1.jpg
 catalog: true
@@ -12,10 +12,10 @@ tags:
 
 ## HTML
 
-###### 在两个HTML之间传数据
+###### send info between two html
 ```html
 HTML1：
-    <form action="..\OpenFLAP\目标.html" name="myform" method="get">
+    <form action="..\OpenFLAP\target.html" name="myform" method="get">
       <input type="text" name="inputString" id="inputStringid" placeholder="Customize testing string!"/>
       <button type="submit">Submit</button>
     </form>
@@ -27,22 +27,49 @@ HTML2：
         var Request = new Object();
         if (url.indexOf('?') != -1) {
             var a = '';
-            var str = url.substr(1)　 //去掉?号
+            var str = url.substr(1)　 //remove '?'
             strs = str.split('&');
             for (var i = 0; i < strs.length; i++) {
                 a = strs[i].split('=')[0]；
-                Request[a] = decodeURI(strs[i].split('=')[1]);//解码,生成获取信息的对象
+                Request[a] = decodeURI(strs[i].split('=')[1]);//decode
                 alert(Request[a]);
             }
         }
 ```
+###### <Select>
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
 
-###### 按钮添加事件
+</head>
+<body>
+<select onchange="test()" id="info">
+   <option value="1">name</option>
+   <option value="2">colllege</option>
+   <option value="3">address</option>
+</select>
+ </body>
+ <Script>
+function test(){
+  var myselect= document.getElementById('info');   //Get Dom
+  var index = myselect.selectedIndex;                  //Get Index
+  var text  = myselect.options[index].text;            //Get Text
+  var value = myselect.options[index].value;           //Get value
+alert(text)
+}
+ </Script>
+ </html>
+```
+
+###### button click
 
 ```html
     <p><input type=submit value=Submit id="submit" >
 
-    //方法1
+    //option 1
     <script>
         $(document).ready(function() {
             $("#submit").click(function(event){
@@ -50,18 +77,18 @@ HTML2：
         });
     </script>
     
-    //方法2 
+    //option 2 
     <script>
         document.getElementById('#submit').addEventListener('click', function() {
         });
     </script> 
 
-    //方法3  js代码：
+    //option 3  js代码：
     function btn(){
     }
 ```
 
-###### 提取用户HTML中输入的文本
+###### get user inpiut in js from html
 
 ```html
     <script>
@@ -70,12 +97,7 @@ HTML2：
     <script>
 ```
 
-###### 打印警告
-```html
-    <script>
-        alert("输入错误")
-    <script>
-```
+
 
 
 ## HTML和js
