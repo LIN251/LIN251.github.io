@@ -14,9 +14,11 @@ tags:
 
 
 #### 0. Basic 
+
 - ***A***  Recommend to use ***'*** instad of ***"*** , but both work. (HTML use ***"*** , so try to use ***'*** in javascript)
 
 - ***B*** 
+
 ```javascript
 x="123"+10 //12310
 x=("123"*1)+10 //133 *1 will change str to int
@@ -29,6 +31,7 @@ isNaN(x) //True
 ```
 
 #### 1. Script property
+
 ```javascript
 async = "async" // Download scripts asynchronously, does not affect html 
 defer = "defer" // Delay loading script
@@ -37,12 +40,14 @@ src = "URL" // Link
 ```
 
 #### 2. Undefined and null
+
 ```javascript
 undefined == null //true (both empty)
 undefined === null //false
 ```
 
 #### 3. JavaScript Object and function
+
 ```javascript
 var a = {} // Object
 
@@ -51,6 +56,7 @@ function f(){} // function
 
 
 #### 4. Syntax error
+
 ```html
  <p>Text1</p>
  <Script type="text/javascript">
@@ -69,6 +75,7 @@ function f(){} // function
 
 
 #### 5. Seeing the syntax error
+
 ```html
  <p>Text1</p>
  <Script type="text/javascript">
@@ -87,6 +94,7 @@ function f(){} // function
 
 
 #### 6. GetElementById
+
  ```html
 <p>Hello <b><span id="person">Tom</span></b></p>
 <Script>
@@ -97,6 +105,7 @@ st = document.getElementById("person").innerHTML;
  ```
 
  Use getElementById
+
   ```html
 <p>
     <a href="#" onclick="add()">Add More<a>
@@ -119,6 +128,7 @@ function add(){
 #### 7. Jquery
 
   - ***A. Document***
+
   ```html
 Load library
 <Script type="text/javascript" src="jquery.min.js"></Script>
@@ -150,8 +160,8 @@ $(window).resize(function(){
 
 
  - ***C. Change HTML element***
-```html
 
+```html
 <Script>
 <a href='#' onclick="$('#eleID').css('background-color', 'red');">Red</a>
 <a href='#' onclick="$('#eleID').hide();">Hide</a>
@@ -165,6 +175,7 @@ $(window).resize(function(){
 
  
  - ***D. Jquery sends to server***
+
  ```html
 <form id="target">
     <input type="text" name="one" value="Hello" >
