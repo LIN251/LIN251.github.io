@@ -86,7 +86,7 @@ function f(){} // function
  Rea: There is a syntax error in first alert between " and '. This will block the first script and run the second script only.
 
 
- #### 6. getElementById
+#### 6. getElementById
  ```html
 <p>Hello <b><span id="person">Tom</span></b></p>
 <Script>
@@ -116,7 +116,7 @@ function add(){
 </Script>
  ```
 
-  #### 7. jquery
+#### 7. jquery
 
   - ***A. Document***
   ```html
@@ -186,7 +186,7 @@ $('#target').change(function(event){ //change is a jquery build in function whic
             &('#spinner').hide(); //hide the spinner since we finish.
         }
     ).error(
-        function(){ //when error.
+        function(){ //when return 404 error.
             alert("error")
         }
     ) 
