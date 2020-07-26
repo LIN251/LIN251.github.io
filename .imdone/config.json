@@ -22,8 +22,7 @@
       "HELP"
     ]
   },
-  "lists": [
-    {
+  "lists": [{
       "name": "HELP",
       "hidden": false
     },
@@ -50,7 +49,7 @@
   },
   "sync": {
     "id": "5aa2413ebb63cf6fc8d9beb8",
-    "name": "JimmyLv/jimmylv.github.io",
+    "name": "Lin251/Lin251.github.io",
     "useImdoneioForPriority": true
   },
   "noHelp": true
