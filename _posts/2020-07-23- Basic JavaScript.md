@@ -36,7 +36,7 @@ charset = "utf-8" // Character Encoding
 src = "URL" // Link
 ```
 
-#### 2. undefined and null
+#### 2. Undefined and null
 ```javascript
 undefined == null //true (both empty)
 undefined === null //false
@@ -50,7 +50,7 @@ function f(){} // function
 ```
 
 
-#### 4. syntax error
+#### 4. Syntax error
 ```html
  <p>Text1</p>
  <Script type="text/javascript">
@@ -86,7 +86,7 @@ function f(){} // function
  Rea: There is a syntax error in first alert between " and '. This will block the first script and run the second script only.
 
 
-#### 6. getElementById
+#### 6. GetElementById
  ```html
 <p>Hello <b><span id="person">Tom</span></b></p>
 <Script>
@@ -116,7 +116,7 @@ function add(){
 </Script>
  ```
 
-#### 7. jquery
+#### 7. Jquery
 
   - ***A. Document***
   ```html
