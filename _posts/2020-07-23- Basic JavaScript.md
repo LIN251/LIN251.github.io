@@ -14,7 +14,6 @@ tags:
 
 
 #### 0. Basic 
-
 - ***A***  Recommend to use ***'*** instad of ***"*** , but both work. (HTML use ***"*** , so try to use ***'*** in javascript)
 
 - ***B*** 
@@ -24,10 +23,6 @@ x="123"+10 //12310
 x=("123"*1)+10 //133 *1 will change str to int
 x=("gred"*1) //NaN
 isNaN(x) //True
-```
-- ***C*** 
-```javascript
-
 ```
 
 #### 1. Script property
@@ -70,30 +65,13 @@ function f(){} // function
  </Script>
 ```
  What is the output?
+
  And: test3
- Rea: There is a syntax error in first alert between " and '. This will block the first script and run the second script only.
+
+ Reason: There is a syntax error in first alert between " and '. This will block the first script and run the second script only.
 
 
-#### 5. Seeing the syntax error
-
-```html
- <p>Text1</p>
- <Script type="text/javascript">
- alert('test1");
- alert("test2");
- </Script>
-
- <p>Text2</p>
- <Script type="text/javascript">
- alert("test3");
- </Script>
-```
- What is the output?
- And: test3
- Rea: There is a syntax error in first alert between " and '. This will block the first script and run the second script only.
-
-
-#### 6. GetElementById
+#### 5. GetElementById
 
  ```html
 <p>Hello <b><span id="person">Tom</span></b></p>
@@ -125,27 +103,32 @@ function add(){
 </Script>
  ```
 
-#### 7. Jquery
+#### 6. Jquery
 
   - ***A. Document***
 
-  ```html
+```html
 Load library
 <Script type="text/javascript" src="jquery.min.js"></Script>
 
 <Script>
 $(document).ready(function(){});
 </Script>
-  ```
+```
+
 ***$(document).ready(function(){})***   
 
 ***$*** is a name of an object(defined in jquery). 
+
 ***()*** Calling the object with the parentheses.
+
 ***(document)*** document is the DOM that predefined in Javascript.
+
 ***ready()*** function will register event after jquery think the DOM fully load.
 
 
  - ***B. Windows***
+ 
 ```html
 Load library
 <Script type="text/javascript" src="jquery.min.js"></Script>
@@ -168,8 +151,11 @@ $(window).resize(function(){
 </Script>
 ```
 ***$*** is a name of an object(defined in jquery). 
+
 ***('#para')*** element ID;
+
 ***.css*** jquery build in function: change css;
+
 ***.hide*** jquery build in function: hide elements;
 
 
