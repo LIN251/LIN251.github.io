@@ -2,7 +2,7 @@
 layout:     post
 title:      Centos中Docker的安装和使用(待续)
 subtitle:   
-date:       2020-06-11
+date:       2019-06-11
 author:     Linz
 header-img: img/Background/b2.jpg
 catalog: true

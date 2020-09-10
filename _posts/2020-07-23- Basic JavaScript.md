@@ -189,3 +189,9 @@ $('#target').change(function(event){
 })
 </Script>
 ```
+
+#### 7. ajax
+ ```javascript
+//read a object using ajax
+var htmlobj= $.ajax({url:url,async:false});
+```

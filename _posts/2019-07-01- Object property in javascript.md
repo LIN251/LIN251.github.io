@@ -2,7 +2,7 @@
 layout:     post
 title:      Object property in javascript
 subtitle:   
-date:       2020-07-01
+date:       2019-07-01
 author:     Linz
 header-img: img/Background/b2.jpg
 catalog: true

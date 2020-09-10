@@ -2,7 +2,7 @@
 layout:     post
 title:      Is Artificial Intelligence reasonable?
 subtitle:   
-date:       2020-05-01
+date:       2019-05-01
 author:     Linz
 header-img: img/ai.jpg
 catalog: true

@@ -2,7 +2,7 @@
 layout:     post
 title:      JavaScript 代码格式化
 subtitle:   
-date:       2020-06-16
+date:       2019-06-16
 author:     Linz
 header-img: img/Background/b2.jpg
 catalog: true

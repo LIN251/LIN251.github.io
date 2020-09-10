@@ -2,7 +2,7 @@
 layout:     post
 title:      Python Flask 2
 subtitle:   
-date:       2020-06-24
+date:       2019-06-24
 author:     Linz
 header-img: img/Background/b2.jpg
 catalog: true
