@@ -1,0 +1,163 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:2019-06-29-Loadoreditjsonfileusingpurejavascript</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<hr>
+<p>Title:      Load or edit json file using pure javascript</p>
+<p>Date:       2019-06-29</p>
+<p>Author:     Linz</p>
+<hr>
+<p>Json example:
+<strong><em>Name: testJson.json</em></strong></p>
+<pre><code class="lang-json">json on Server
+[{
+    &quot;name&quot;: &quot;AA&quot;,
+    &quot;email&quot;: &quot;zhangguoli@123.com&quot;,
+    &quot;pets&quot;:[
+        { &quot;animal&quot;:&quot;hamster&quot;, &quot;name&quot;:&quot;Lightning&quot; }
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;cc&quot;,
+    &quot;email&quot;: &quot;zhenjie@123.com&quot;,
+    &quot;pets&quot;:[
+        { &quot;animal&quot;:&quot;dog&quot;, &quot;name&quot;:&quot;Fido&quot; },
+        { &quot;animal&quot;:&quot;cat&quot;, &quot;name&quot;:&quot;Felix&quot; },
+        { &quot;animal&quot;:&quot;hamster&quot;, &quot;name&quot;:&quot;Lightning&quot; }
+    ]
+  }
+]
+</code></pre>
+<h2 id="1-load">1. Load</h2>
+<h4 id="wrong-way">Wrong way</h4>
+<pre><code class="lang-Javascript">
+   data = &#39;[{&quot;test1&quot; : &quot;50&quot;, &quot;test2&quot; : &quot;90&quot;}]&#39;;
+
+   function load() {
+    var someData = JSON.parse(data);
+    console.log(someData[0].test2); // Log &quot;90&quot;
+    }
+</code></pre>
+<p>This is not a correct way to load a json file. It creates a json formate variable then access the variable in the same file scope. No data request between different files.</p>
+<h4 id="local-request-">Local (request)</h4>
+<p>Load a local json file is not very useful, but good to know.</p>
+<pre><code class="lang-js">const json = require(&#39;./testJson.json&#39;)
+console.log(json)
+</code></pre>
+<h4 id="server-directly-">Server (Directly)</h4>
+<pre><code class="lang-javascript">  $.getJSON(&quot;./testJson.json&quot;, function (json) {
+    console.log(json); // this will show the info it in firebug console
+  });
+</code></pre>
+<h4 id="server-ajax-">Server (AJAX)</h4>
+<pre><code class="lang-Html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;   //text will shows here
+&lt;script&gt;
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 &amp;&amp; this.status == 200) {
+    var obj = JSON.parse(this.responseText);
+    document.getElementById(&quot;demo&quot;).innerHTML = obj[0].email;
+  }
+};
+xmlhttp.open(&quot;GET&quot;, &quot;file.txt&quot;, true);
+xmlhttp.send();
+&lt;script&gt;
+
+</code></pre>
+<h2 id="2-add">2. Add</h2>
+<h4 id="server-ajax-">Server (AJAX)</h4>
+<pre><code class="lang-javascript">function append() {
+  $.getJSON(&quot;./testJson.json&quot;, function (json) {
+    json[0].push({
+      &quot;sex&quot;: &quot;male&quot;,
+    });
+    txt = JSON.stringify(json);
+  });
+</code></pre>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

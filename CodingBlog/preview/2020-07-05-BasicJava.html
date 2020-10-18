@@ -1,0 +1,330 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:2020-07-05-BasicJava</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<hr>
+<p>Title:      Basic Java</p>
+<p>Date:       2020-07-05</p>
+<p>Author:     Linz</p>
+<hr>
+<h2 id="java">Java</h2>
+<h2 id="0-java-">0. java 接口，类</h2>
+<h3 id="-interface-">接口（interface）</h3>
+<p>interface Alram {
+}
+接口不能实（implements)接口,只能继承（extend）多个多个其它的接口
+Java接口必须通过类来实现它的抽象方法;
+类实现了某个Java接口时,它必须实现接口中的所有抽象方法,否则这个类必须声明为抽象类;
+一个类只能继承一个直接的父类,但可以实现多个接口
+  // ps： 因为如果支持多继承的话，假设多个父类中有相同的成员，那么其子类就不搞清楚到底使用哪个父类的同名成员了.</p>
+<h3 id="-abstract-">抽象类（abstract）</h3>
+<p>【类可以extend 抽象类】
+abstract class Door {
+}
+1）抽象方法必须为public或者protected（因为如果为private，则不能被子类继承，子类便无法实现该方法），缺省情况下默认为public。</p>
+<p>　　2）抽象类不能用来创建对象；</p>
+<p>　　3）如果一个类继承于一个抽象类，则子类必须实现父类的抽象方法。如果子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类。</p>
+<h4 id="-">区别：</h4>
+<p>interface 只能extend（可以多个）
+               不能implements</p>
+<p>class       可以extend（一个）抽象类
+               可以implements（多个）
+             （abstract class 跟class一样）</p>
+<h2 id="-">转换</h2>
+<h6 id="string-to-int-">String to int:</h6>
+<pre><code class="lang-java">int num = Integer.parseInt(string);
+</code></pre>
+<h6 id="int-to-string-">int to String :</h6>
+<pre><code class="lang-java">String.valueOf(res)  
+String a = res+“”；
+</code></pre>
+<h4 id="string-to-char">string to char</h4>
+<pre><code class="lang-java">string .toCharArray();
+char c=s.charAt(0);
+</code></pre>
+<h4 id="char-to-string">char to string</h4>
+<pre><code class="lang-java">String a = String(char[]);  （构造函数)
+String a = String(char[],offset,count);（构造函数)
+static string copyValueOf(char[]);(静态方法)
+copyValueOf(char[] data,int offset,int count); (静态方法)
+String.valueOf(res) ；（可以将基本数据类型转换成字符串）
+</code></pre>
+<h2 id="string">String</h2>
+<h6 id="string-to-int-">String to int:</h6>
+<pre><code class="lang-java">int num = Integer.parseInt(string);
+</code></pre>
+<h6 id="substring-">substring:</h6>
+<pre><code class="lang-java">S.substring(position1, position2+1)// 这个是包含头，不包含尾，所以+1
+</code></pre>
+<h6 id="-">切割</h6>
+<pre><code class="lang-java">String[] a = s.split(&quot;xxx&quot;);
+</code></pre>
+<h6 id="-">去除两边空格</h6>
+<pre><code class="lang-java">String[] a = s.trim();
+</code></pre>
+<h2 id="int">Int</h2>
+<h6 id="find-max-">find Max:</h6>
+<pre><code class="lang-java"> Math.max(a, b);
+</code></pre>
+<h6 id="int-to-string-">int to String :</h6>
+<pre><code class="lang-java">String.valueOf(res)
+</code></pre>
+<h4 id="char-to-string">char to String</h4>
+<pre><code class="lang-java">String a = Character.toString(tempKey)
+</code></pre>
+<h4 id="string-to-char">string to char</h4>
+<pre><code class="lang-java">char c=s.charAt(0);
+</code></pre>
+<h4 id="-">交集：</h4>
+<pre><code class="lang-java">set1.retainAll(set2);
+</code></pre>
+<h4 id="-">并集</h4>
+<pre><code class="lang-java">set1.addAll(set2);
+</code></pre>
+<h4 id="-">差集</h4>
+<pre><code class="lang-java">set1.removeAll(set2);
+</code></pre>
+<h4 id="-">读文件</h4>
+<pre><code class="lang-java">    import java.io.File; 
+    import java.util.*;
+    import java.io.FileNotFoundException; 
+      File myObj = new File(&quot;2.txt&quot;);
+       Scanner myReader = new Scanner(myObj);
+       while (myReader.hasNextLine()) {
+                        String data = myReader.nextLine();
+                        }
+       myReader.close();
+</code></pre>
+<h4 id="-">写文件</h4>
+<pre><code class="lang-java">    import java.io.PrintWriter;
+    PrintWriter writer = new PrintWriter(&quot;2_out.txt&quot;);
+    writer.println(info);
+    writer.close();
+</code></pre>
+<h4 id="iterator-">Iterator 的使用方法</h4>
+<pre><code class="lang-java">需要先建立一个Iterator对象，对应(list,set·····)
+        Iterator iterator = list.iterator(); 
+
+            System.out.println(&quot;List elements : &quot;); 
+
+            while (iterator.hasNext()) 
+                System.out.print(iterator.next() + &quot; &quot;); 
+
+            System.out.println();
+</code></pre>
+<hr>
+<pre><code>#### Set接口
+</code></pre><pre><code class="lang-java">    Set&lt;String&gt; currentSet = new HastSet&lt;String&gt;();
+    Set&lt;String&gt; currentSet = new LinkedHashSet&lt;String&gt;();
+    Set&lt;String&gt; currentSet = new TreeSet&lt;String&gt;();
+</code></pre>
+<pre><code>#### List接口:
+</code></pre><pre><code class="lang-java">    List&lt;String&gt; currentList = new ArrayList&lt;String&gt;();
+    List&lt;String&gt; currentList = new Vector&lt;String&gt;();
+    List&lt;String&gt; currentList = new LinkedList&lt;String&gt;();
+</code></pre>
+<pre><code>#### Map接口:
+</code></pre><pre><code class="lang-java">    Map&lt;Character,Integer&gt; curmap = new HashMap&lt;Character,Integer&gt; ();
+    Map&lt;Character,Integer&gt; curmap = new TreeMap&lt;Character,Integer&gt; ();
+    Map&lt;Character,Integer&gt; curmap = new HashTable&lt;Character,Integer&gt; ();
+</code></pre>
+<h5 id="-">-------------------------</h5>
+<h2 id="1-set-in-java">1.Set in java</h2>
+<p>An unordered collection of objects in which duplicate values cannot be stored.
+Basically, Set is implemented by HashSet, LinkedHashSet or TreeSet (sorted representation).
+Set has various methods to add, remove clear, size, etc.</p>
+<pre><code class="lang-java">// Java code for adding elements in Set 
+import java.util.*; 
+public class Set_example 
+{ 
+    public static void main(String[] args) 
+    { 
+        // Set deonstration using HashSet 
+        Set&lt;Character&gt; hash_Set = new HashSet&lt;Character&gt;(); 
+        hash_Set.add(&quot;G&quot;); 
+        hash_Set.add(&quot;F&quot;); 
+        hash_Set.add(&quot;G&quot;); 
+        hash_Set.add(&quot;E&quot;); 
+        hash_Set.add(&quot;S&quot;); 
+        System.out.print(&quot;Set output without the duplicates&quot;); 
+
+        System.out.println(hash_Set); 
+
+        // Set deonstration using TreeSet 
+        System.out.print(&quot;Sorted Set after passing into TreeSet&quot;); 
+        Set&lt;String&gt; tree_Set = new TreeSet&lt;String&gt;(hash_Set); 
+        System.out.println(tree_Set); 
+    } 
+}  
+Set output without the duplicates[G, E, F, S]
+Sorted Set after passing into TreeSet[E, F, G, S]
+</code></pre>
+<pre><code class="lang-java">1.Set&lt;String&gt; test1 =  new HashSet&lt;String&gt;()
+//去除重复的内容
+2Set&lt;String&gt; test2 = new TreeSet&lt;String&gt;(test1).
+//对去重复之后的内容进行字母数字order排序
+3.Function:
+###### import java.util.*;
+test1.contains();
+test1.size();
+test1.isEmpty();
+test1.iterator();
+test1.remove();
+test1.clear();
+test1.equal();
+</code></pre>
+<h2 id="2-list-in-java">2.List in java</h2>
+<pre><code class="lang-java">     List&lt;Integer&gt; intList = new ArrayList&lt;Integer&gt;();
+     size();
+     indexOf(77)
+     contains();
+     toArray();
+     add();
+     remove();
+     removeAll();
+     replaceAll();
+     sort();
+     clear();
+     indexOf();
+     get();
+</code></pre>
+<h2 id="3-array-in-java">3.Array in java</h2>
+<pre><code class="lang-java">       int[] arr = {13, 7, 6, 45, 21, 9, 2, 100}; 
+       int[] intArray = new int[20];     //数据不明确，new是建在堆内存中
+       int[] intArray = new int[] {13, 7, 6, 45, 21, 9, 2, 100}; 
+
+        System.out.println(arr);
+        output: [I@de6ced
+        // [ 表示是一个数组。 I 表示是int 值  后面是哈希算法array地址 
+
+        int min = Arrays.stream(arr).min().getAsInt();
+        int max = Arrays.stream(arr).max().getAsInt();
+
+       Arrays.sort(arr); 
+       Arrays.sort(arr, 1, 5); 
+       Arrays.sort(arr, Collections.reverseOrder()); 
+       Arrays.binarySearch(array,key);
+       Arrays.equals(arr1, arr2);
+       arr.fill(87);   // all change to 87
+       Arrays.toString(arr);
+
+  ### Array to list, toArrayList
+      import java.util.ArrayList;
+      ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;(Arrays.asList(a));
+
+     import java.util.List;
+       Integer[] spam = new Integer[] { 1, 2, 3 };
+       List&lt;Integer&gt; list = Arrays.asList(spam);
+
+       int[] spam = new int[] { 1, 2, 3 };
+       List&lt;int[]&gt; list = Arrays.asList(spam);
+
+</code></pre>
+<h2 id="4-hashmap-in-java">4.HashMap in java</h2>
+<p>hashmap里查找元素的时间复杂度近似常数</p>
+<pre><code class="lang-java"> HashMap&lt;Integer, String&gt; map;
+ Map&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;();
+
+     map.put( k, v);
+     map.containsKey(k);
+     map.get( k );    
+     map.size();
+     map.remove(k);
+     map.replace(k,oldV,newV);     
+</code></pre>
+<h2 id="5bufferedreader">5BufferedReader</h2>
+<pre><code class="lang-java"> BufferedReader reader=new BufferedReader(new FileReader(filePath)    
+
+int read()                    读取单个字符。
+int read(char[] cbuf, int off, int len)    将字符读入数组的某一部分。
+String readLine()            读取一个文本行。
+long skip(long n)                跳过字符。
+boolean ready()                判断此流是否已准备好被读取。
+void close()                关闭该流并释放与之关联的所有资源。
+void reset()                    将流重置到最新的标记。
+</code></pre>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

@@ -1,0 +1,195 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:2020-06-30-Regularexpressioninjavascript</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<hr>
+<p>Title:      Regular expression and generate random strings in javascript</p>
+<p>Date:       2020-06-30</p>
+<p>Author:     Linz</p>
+<hr>
+<h2 id="1-regular-expression-in-javascript">1. Regular expression in javascript</h2>
+<p><strong><em>String example:</em></strong>
+var regularExpression = &quot;(b)+bab(babab)+[a+b]-{ab}&quot;;</p>
+<h4 id="parentheses-">Parentheses ()</h4>
+<pre><code class="lang-javascript">var regex1 = /\((.+?)\)/g;  
+console.log(regularExpression.match(regex1)); 
+</code></pre>
+<h4 id="square-brackets-">Square brackets []</h4>
+<pre><code class="lang-javascript">var regex2 = /\[(.+?)\]/g; 
+console.log(regularExpression.match(regex2)); 
+</code></pre>
+<h4 id="big-parantheses-">big parantheses {}</h4>
+<pre><code class="lang-javascript">var regex3 = /\{(.+?)\}/g; 
+console.log(regularExpression.match(regex3)); 
+</code></pre>
+<h2 id="2-generate-random-string">2. Generate random string</h2>
+<p>Goal: </p>
+<ol>
+<li>Generate a fix length random string.</li>
+<li>Generate a random length rangom string.</li>
+<li>Provides a Letter pool.<pre><code class="lang-javascript">function randomStringGenerate(flag, min, max){
+var str = &quot;&quot;;
+var letterPool = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];
+var stringLength = 0;
+if(flag){
+ stringLength = Math.round(Math.random() * (max-min)) + min; // generate a number
+}
+//generate string
+for(var a = 0; a &lt;stringLength ; a++ ){
+   pos = Math.round(Math.random() * (arr.length-1)); // same logic, generate a number
+   str += arr[pos]; // add position char to str
+}
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="3">3</h2>
+<ol>
+<li>.*</li>
+</ol>
+<p>. 表示 匹配除换行符 \n 之外的任何单字符，<em>表示零次或多次。所以.</em>在一起就表示任意字符出现零次或多次。没有?表示贪婪模式。比如a.*b，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索aabab的话，它会匹配整个字符串aabab。这被称为贪婪匹配。</p>
+<ol start="2">
+<li>.*?</li>
+</ol>
+<p>?跟在<em>或者+后边用时，表示懒惰模式。也称非贪婪模式。就是匹配尽可能少的字符。就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。
+a.</em>?b匹配最短的，以a开始，以b结束的字符串。如果把它应用于aabab的话，它会匹配aab（第一到第三个字符）和ab（第四到第五个字符）。</p>
+<ol start="3">
+<li>.+?</li>
+</ol>
+<p>同上，?跟在*或者+后边用时，表示懒惰模式。也称非贪婪模式。就意味着匹配任意数量的重复，但是在能使整个匹配成功的前提下使用最少的重复。
+a.+?b匹配最短的，以a开始，以b结束的字符串，但a和b中间至少要有一个字符。如果把它应用于ababccaab的话，它会匹配abab（第一到第四个字符）和aab（第七到第九个字符）。注意此时匹配结果不是ab,ab和aab。因为a和b中间至少要有一个字符。</p>
+<h2 id="4-">4 元字符</h2>
+<p>？表示匹配一个任意字符位</p>
+<p>. 匹配除了换行以外任意字符，任意长度</p>
+<p>*表示0个或者多个</p>
+<p>.?d 长度为1的任意字符串,并且后面跟随一个d</p>
+<p>.*d 长度为任意的任意字符串，并且后面跟随一个d</p>
+<p>\b\b 单词开始到结束，单词限定 (匹配单词good： \bgood\b)</p>
+<p>\w 字母,数字,下划线,汉字</p>
+<p>\d 数字</p>
+<p>\s 匹配任意的空白符</p>
+<p>^ 匹配位置是整个字符串的开始！！整个字符串，不允许从中间 (匹配数字23236：^\d+$ 开始和结束之间智能有数字)</p>
+<p>$ 匹配字符串的结束 </p>
+<p>[^abc] 匹配除了abc以外的任意字符</p>
+<h2 id="5-">5 重复</h2>
+<p>*重复0次或者多次</p>
+<p>+重复一次或者多次</p>
+<p>?重复0次或者1次或</p>
+<p>{n} 重复n次</p>
+<p>{n,} 重复n次或者更多次</p>
+<p>{n,m} 重复n到m次</p>
+<p>| 分支条件,如果满足了其中某一个分支条件，那么就不会去管其他的条件 0\d{2}-\d{8}|0\d{3}-\d{7}</p>
+<h2 id="5-">5 字符类</h2>
+<p>[0-9] = \d</p>
+<p>[a-z0-9A-Z] = \w</p>
+<p>[&amp;?.] = &amp; or ? or .</p>
+<p>(?0\d{2}[) -]?\d{8}</p>
+<p>121? = 12, 或者121</p>
+<h2 id="6-">6 分组()</h2>
+<p>(\d{1,3}.){3}\d{1,3}</p>
+<p>分组命名(?<groupname>exp)</p>
+<p>(?:exp) 匹配exp，但是不捕获文本，也不给此分组标记号</p>
+<h2 id="7-">7 贪婪，懒惰</h2>
+<p>贪婪，尽可能多 a.*b -&gt; (aabab) -&gt; aabab</p>
+<p>懒惰，尽可能少 a.*?b -&gt; (aabab) -&gt; aab</p>
+<p>*? 重复0次或者多次，尽可能少</p>
+<p>+? 重复1次或者多次，尽可能少</p>
+<p>?? 重复0次或者1次，尽可能少</p>
+<p>{n,m}? 重复n次到m次，尽可能少</p>
+<p>{n,}？ 重复n次或者多次，尽可能少</p>
+<h2 id="8-">8 后向引用</h2>
+<p>匹配 home home -&gt; \b(\w+)\b\s+\1\b -&gt; &quot;\1&quot; 就是引用前面的(\w+)</p>
+<p>匹配 home home -&gt; \b(?<word>\w+)\b\s+\k<word>\b -&gt; &quot;\k<word>&quot; 就是引用前面的word组</p>
+<h2 id="9-t-f-exp-exp-">9 零宽断言 T/F (前或者后必须有某个exp，但是提取的时候，这个exp不占位)</h2>
+<p>?=exp -&gt; 零宽度，自身出现的位置前面能匹配表达式</p>
+<p>I am singing while you are dancing -&gt; \b\w+(?=ing\b) -&gt; 会匹配出 sing, danc</p>
+<p>?&lt;=exp -&gt; 零宽度，自身出现的位置后面能匹配表达式</p>
+<p>reading a book -&gt; (?&lt;=\bre&gt;)\w+\b -&gt; ading</p>
+<h2 id="10-t-f-exp-exp-">10 负向零宽断言 T/F (前或者后必须没有某个exp，但是提取的时候，这个exp不占位)</h2>
+<p>(?!exp) 后面必须没有</p>
+<p>(?&lt;!exp) 前面必须没有</p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
