@@ -1,1 +1,5 @@
 i5ting_toc -f YourMDfile.md -o
+
+<img src="../../pics/CodingBlog_Algorthms/BitOperation1.png" width="800" height="500">
+
+page71
