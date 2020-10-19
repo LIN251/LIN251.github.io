@@ -4,6 +4,7 @@ Title: Dichotomy
 Date: 2020-10-18
 
 Author: Linz
+
 ---
 
 ## Dichotomy
