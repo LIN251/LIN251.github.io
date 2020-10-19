@@ -1,0 +1,163 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:2020-10-18-Dichotomy</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<hr>
+<p>Title: Dichotomy</p>
+<p>Date: 2020-10-18</p>
+<h2 id="author-linz">Author: Linz</h2>
+<h2 id="dichotomy">Dichotomy</h2>
+<h3 id="sample-dichotomy">Sample Dichotomy</h3>
+<p>Search number return index.</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>1</th>
+<th>5</th>
+<th>10</th>
+<th>11</th>
+<th>15</th>
+<th>18</th>
+<th>20</th>
+<th>30</th>
+<th>50</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Index</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Time O(logn)</p>
+<p>Space O(1)</p>
+<pre><code class="lang-python">from array import *
+
+def Dichotomy(number,index,target):
+    leftPos = 0
+    rightPos = len(number)-1
+    while leftPos&lt;=rightPos:
+        mid = (leftPos+rightPos)/2
+        if number[mid] &gt; target:
+            rightPos = mid - 1
+        elif number[mid] &lt; target:
+            leftPos = mid + 1
+        else:
+            return index[mid]
+    pass
+
+if __name__ == &#39;__main__&#39;:
+    T = [[1, 5, 10, 11, 15, 18, 20, 30, 50], [0, 1, 2, 3, 4, 5, 6, 7, 8]]
+    number = T[0]
+    index = T[1]
+    res = Dichotomy(number,index,50)
+    print(res)
+</code></pre>
+<p>Errors and points:</p>
+<ol>
+<li>List indices must be integers or slices, not float</li>
+</ol>
+<pre><code class="lang-python">mid = (leftPos+rightPos)/2  --&gt;  mid = int((leftPos+rightPos)/2)
+</code></pre>
+<ol start="2">
+<li>Overflow the Size of int</li>
+</ol>
+<pre><code class="lang-python">mid = int((leftPos+rightPos)/2)  --&gt;  mid = left + int((right - left) / 2)
+</code></pre>
+<p>If we add two ints together which may greater than the size of the int (2^31 - 1).</p>
+<h3 id="complicated-dichotomy">Complicated Dichotomy</h3>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
