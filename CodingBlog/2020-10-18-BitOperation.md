@@ -30,8 +30,6 @@ bool isPowerOfTwo(int n) {
 
 #### Find unique number
 
-
-
 | a   | b   | a^b |
 | --- | --- | --- |
 | 1   | 0   | 1   |
@@ -63,6 +61,7 @@ x = 6, x = 5
 ```
 
 Reason:
+
 y = (x ^ y) ^ y --> y = x ^ (y ^ y) = x
 
 x = (x ^ y) ^ x ^ (y ^ y) --> (x ^ x) ^ y ^ (y ^ y) = y
@@ -88,7 +87,6 @@ Upper to Lower | Lower to Upper
 #### Int Sign
 
 ```
-
 int x = -1, y = 2;
 bool f = ((x ^ y) < 0); // true
 
