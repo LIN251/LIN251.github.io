@@ -1,0 +1,132 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:reverseInteger</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<hr>
+<p>Title: Add Two Numbers</p>
+<p>Date: 2020-10-24</p>
+<p>Author: Linz</p>
+<hr>
+<h2 id="reverse-integer">Reverse Integer</h2>
+<p><img src="https://i.loli.net/2020/10/26/hMOeIp4dvU8LkEu.png" alt=""></p>
+<h4 id="idea-1">Idea 1</h4>
+<ol>
+<li><p>Change int to string.</p>
+</li>
+<li><p>Reverse the string -&gt; list[<start>:<stop>:<step>] therefore <strong>str_num[::-1]</strong> means start form 0 index and end on 0 index, each step is -1 which is reverse steps.</p>
+</li>
+<li><p>Convert string to int.</p>
+</li>
+<li><p>Check out of bound.</p>
+</li>
+</ol>
+<pre><code class="lang-python">
+
+def reverse(x):
+            if x &gt;= 0:
+                str_num = str(x)
+                str_num = str_num[::-1]
+                int_num = int(str_num)
+            else:
+                str_num = str(x)
+                str_num = str_num[:0:-1]
+                str_num = &quot;-&quot; + str_num
+                int_num = int(str_num)
+            if (int_num &gt;= 2147483647 or int_num &lt;= -2147483648):
+                return 0
+            else:
+                return int_num
+
+
+if __name__ == &#39;__main__&#39;:
+    res2 = reverse(2147483649)
+    print(res2)
+
+
+</code></pre>
+<p><img src="https://i.loli.net/2020/10/26/q62KdfrLobzu91R.png" alt=""></p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
