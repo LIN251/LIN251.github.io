@@ -9,7 +9,7 @@ Author: Linz
 
 ## 13. Roman to Integer
 
-![image-20201104134429047](C:\Users\Lin\AppData\Roaming\Typora\typora-user-images\image-20201104134429047.png)
+![](https://i.loli.net/2020/11/05/xYln3wdovih4gjt.png)
 
 #### Idea 1:
 
